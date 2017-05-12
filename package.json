@@ -1,0 +1,10 @@
+{
+  "name": "google-auth-service",
+  "main": "auth-service",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "googleapis": "^19.0.0"
+  }
+}
