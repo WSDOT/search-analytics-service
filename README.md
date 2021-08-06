@@ -8,7 +8,7 @@ This project uses the [google-api-nodejs-client](https://github.com/google/googl
 ## Set Up
 
 You will need to set up a service account in the google developer console for this project to generate a JWT. 
-See Service Accounts at https://developers.google.com/analytics/devguides/reporting/core/v4/authorization. 
+See Service Accounts at https://developers.google.com/analytics/devguides/reporting/core/v4/authorization#service_accounts
 
 Once created, download the service account's public/private key as a JSON file and add it to the root of this project. Make sure update the import path in auth-service.js.
 
