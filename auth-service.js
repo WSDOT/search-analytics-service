@@ -3,13 +3,19 @@ var app = express();
 var google = require('googleapis');
 var cors = require('cors')
 
+const https = require('https');
+const fs = require('fs');
+
+var options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
+
 app.use(cors())
   
-  // Constains information for auth
-  // TODO: insert your json file name
-var key = require('PATH_TO_SERVICE_ACCOUNT_JSON');
-
-var port = process.env.PORT || 3009;
+// Constains information for auth
+// TODO: insert your json file name
+var key = require('./search-admin-console.json');
 
 var router = express.Router();
 
@@ -38,4 +44,7 @@ router.get('/', function(req, res) {
 app.use('/google-auth', router);
 
 // start server
-app.listen(port);
+var server = https.createServer(options, app);
+server.listen(443, () => {
+  console.log("Server starting on port: 443")
+});
