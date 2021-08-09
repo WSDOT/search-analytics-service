@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express(); 
-var google = require('googleapis');
+var {google} = require('googleapis');
 var cors = require('cors')
 
 const https = require('https');
